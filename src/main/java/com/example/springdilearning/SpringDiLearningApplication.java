@@ -1,9 +1,6 @@
 package com.example.springdilearning;
 
-import com.example.springdilearning.controller.ConstructorInjectedController;
-import com.example.springdilearning.controller.MyController;
-import com.example.springdilearning.controller.PropertyInjectedController;
-import com.example.springdilearning.controller.SetterInjectedController;
+import com.example.springdilearning.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -32,6 +29,10 @@ public class SpringDiLearningApplication {
         System.out.println("Constructor--------------------------");
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) applicationContext.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.greeting());
+
+        System.out.println("I18NController -----------------------");
+        I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
+        System.out.println(i18nController.sayGreeting());
     }
 
 }
