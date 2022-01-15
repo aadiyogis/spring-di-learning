@@ -1,11 +1,13 @@
 package com.example.springdilearning;
 
 import com.example.springdilearning.controller.*;
+import org.learning.springdilearning.PetController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"com.example.springdilearning","org.learning.springdilearning"})
 @SpringBootApplication
 public class SpringDiLearningApplication {
 
@@ -33,6 +35,10 @@ public class SpringDiLearningApplication {
         System.out.println("I18NController -----------------------");
         I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
         System.out.println(i18nController.sayGreeting());
+
+        System.out.println("_________BEST PET________________ IS: ");
+        PetController petController = (PetController) applicationContext.getBean("petController");
+        System.out.println(petController.getBestPet());
     }
 
 }
